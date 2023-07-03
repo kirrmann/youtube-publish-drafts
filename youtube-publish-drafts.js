@@ -10,7 +10,7 @@
     // ~ PUBLISH CONFIG
     // -----------------------------------------------------------------
     const MADE_FOR_KIDS = false; // true / false;
-    const VISIBILITY = 'Public'; // 'Public' / 'Private' / 'Unlisted'
+    const VISIBILITY = 'Unlisted'; // 'Public' / 'Private' / 'Unlisted'
     // -----------------------------------------------------------------
     // ~ SORT PLAYLIST CONFIG
     // -----------------------------------------------------------------
@@ -305,7 +305,7 @@
         debugLog('sorting playlist');
         const videos = await playlistVideos();
         debugLog(`found ${videos.length} videos`);
-        videos.sort(SORTING_KEY);
+        videos.sort(SORTING_KEY).reverse();
         const videoNames = videos.map((v) => v.name);
 
         let index = 1;
